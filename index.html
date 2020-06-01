@@ -3,7 +3,50 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Momentum</title>
+    <meta
+      name="description"
+      content="A clone page about momentum as a chrome extension."
+    />
+    <meta name="author" content="IGY" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script type="module" src="./module/main.js"></script>
+    <script type="module" src="./module/greeting.js"></script>
+    <script type="module" src="./module/todo.js"></script>
   </head>
-  <body></body>
+  <body>
+    <section id="main" class="flex">
+      <!-- Real time clock -->
+      <div class="js-clock clock">
+        <h1 class="js-title title"></h1>
+      </div>
+      <!-- Greeting section -->
+      <div class="js-greetSection">
+        <form class="js-nameForm nameForm none">
+          <h2 class="js-question question"></h2>
+          <input type="text" />
+        </form>
+        <p class="js-greetAlert greetAlert"></p>
+        <h4 class="js-greetings greetings"></h4>
+      </div>
+      <!-- To-do section -->
+      <div class="js-toDoSection toDoSection">
+        <form class="js-toDoForm toDoForm none">
+          <input type="text" />
+          <p>Note your plan.</p>
+        </form>
+        <div class="js-toDoComment toDoComment none">
+          <p>🔥</p>
+          <p>Cheer up! Hang in there.</p>
+        </div>
+        <ul class="js-toDoList toDoList"></ul>
+      </div>
+      <button class="js-reset reset none">Reset</button>
+      <span class="js-weather weather"></span>
+    </section>
+  </body>
 </html>
