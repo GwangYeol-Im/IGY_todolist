@@ -44,6 +44,7 @@ li {
 }
 
 button {
+  color: var(--color-white);
   cursor: pointer;
   border: none;
   outline: none;

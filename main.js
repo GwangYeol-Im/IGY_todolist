@@ -1,7 +1,8 @@
-import * as Bg from "./bg.js";
-import * as Clock from "./clock.js";
-import * as Greeting from "./greeting.js";
-import * as Todo from "./todo.js";
+import * as Bg from "./module/bg.js";
+import * as Clock from "./module/clock.js";
+import * as Greeting from "./module/greeting.js";
+import * as Todo from "./module/todo.js";
+import * as Weather from "./module/weather.js";
 
 function init() {
   //Background image.
@@ -17,6 +18,9 @@ function init() {
   //To-do form.
   Todo.loadToDos();
   Todo.toDoForm.addEventListener("submit", Todo.handleSubmit);
+
+  //Weather.
+  Weather.loadCoords();
 }
 
 init();

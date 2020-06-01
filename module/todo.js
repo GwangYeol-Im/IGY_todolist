@@ -12,18 +12,24 @@ export const TODOS_LS = "toDos",
 export let toDos = [];
 
 // Rendering logic.
+// load To-Do form on browser.
+export function paintToDoForm() {
+  const p = document.createElement("p");
+  p.innerText = "Note your plan.";
+  toDoForm.appendChild(p);
+}
+
 // load To-Do list on browser.
 export function loadToDos() {
   const loadedToDos = localStorage.getItem(TODOS_LS);
 
   if (loadedToDos !== null) {
     const toDoArr = JSON.parse(loadedToDos);
-    toDoArr.forEach((toDo) => paintToDo(toDo.text));
+    toDoArr.forEach(toDo => paintToDo(toDo.text));
   }
 
   if (toDos.length === TODOS_NUM) {
-    Util.display(fullToDo);
-    Util.hide(toDoForm);
+    Util.change(toDoForm, fullToDo);
   }
 }
 
@@ -38,8 +44,7 @@ export function handleSubmit() {
     paintToDo(currentValue);
   } else {
     paintToDo(currentValue);
-    Util.display(fullToDo);
-    Util.hide(toDoForm);
+    Util.change(toDoForm, fullToDo);
   }
   toDoInput.value = "";
 }
@@ -77,13 +82,12 @@ export function saveToDo() {
 // Handle del Button.
 export function handleBtn(event) {
   const target = event.target.parentNode,
-    cleanToDos = toDos.filter((toDo) => toDo.id !== parseInt(target.id));
+    cleanToDos = toDos.filter(toDo => toDo.id !== parseInt(target.id));
 
   Util.fadeOut(target);
   toDos = cleanToDos;
   saveToDo();
-  Util.display(toDoForm);
-  Util.hide(fullToDo);
+  Util.change(fullToDo, toDoForm);
 }
 
 export * from "./todo.js";

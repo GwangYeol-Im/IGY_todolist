@@ -1,5 +1,7 @@
 import * as Util from "./util.js";
 import * as Todo from "./todo.js";
+import * as Weather from "./weather.js";
+import * as Reset from "./reset.js";
 
 export const greetContainer = document.querySelector(".js-greetSection"),
   nameForm = greetContainer.querySelector(".js-nameForm"),
@@ -18,7 +20,9 @@ export function loadName() {
     askForName();
   } else {
     paintGreeting(currentUser);
-    Util.display(Todo.toDoForm);
+    Todo.paintToDoForm();
+    Util.display(Todo.toDoForm, Weather.weather);
+    Reset.paintReset();
   }
 }
 
@@ -36,11 +40,12 @@ export function handleSubmit(event) {
   if (currentValue.length === 0) {
     paintAlert();
   } else {
-    Util.hide(greetAlert);
-    Util.hide(nameForm);
+    Util.hide(greetAlert, nameForm);
     saveName(currentValue);
     paintGreeting(currentValue);
-    Util.display(Todo.toDoForm);
+    Todo.paintToDoForm();
+    Util.display(Todo.toDoForm, Weather.weather);
+    Reset.paintReset();
     input.value = "";
   }
 }

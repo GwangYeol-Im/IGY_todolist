@@ -1,14 +1,25 @@
 "use strict";
 
 // Display element on browser.
-export function display(element) {
-  element.classList.remove("none");
-  element.classList.add("active");
+export function display(...args) {
+  args.forEach(element => {
+    element.classList.remove("none");
+    element.classList.add("active");
+  });
 }
 
-export function hide(element) {
-  element.classList.remove("active");
-  element.classList.add("none");
+// Hide element on browser.
+export function hide(...args) {
+  args.forEach(element => {
+    element.classList.remove("active");
+    element.classList.add("none");
+  });
+}
+
+// Change each other's state on browser.
+export function change(del, cre) {
+  hide(del);
+  display(cre);
 }
 
 //Fade-in motion function

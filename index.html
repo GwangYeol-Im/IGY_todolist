@@ -14,9 +14,11 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
-    <script type="module" src="./module/main.js"></script>
+    <script type="module" src="./main.js"></script>
     <script type="module" src="./module/greeting.js"></script>
     <script type="module" src="./module/todo.js"></script>
+    <script type="module" src="./module/weather.js"></script>
+    <script type="module" src="./module/reset.js"></script>
   </head>
   <body>
     <section id="main" class="flex">
@@ -37,7 +39,6 @@
       <div class="js-toDoSection toDoSection">
         <form class="js-toDoForm toDoForm none">
           <input type="text" />
-          <p>Note your plan.</p>
         </form>
         <div class="js-toDoComment toDoComment none">
           <p>🔥</p>
@@ -45,8 +46,8 @@
         </div>
         <ul class="js-toDoList toDoList"></ul>
       </div>
-      <button class="js-reset reset none">Reset</button>
-      <span class="js-weather weather"></span>
+      <button class="js-reset reset"></button>
+      <span class="js-weather weather none"></span>
     </section>
   </body>
 </html>
