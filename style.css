@@ -21,6 +21,32 @@
   --animation-fadeIn: fadeIn 0.5s linear;
 }
 
+/* Typography */
+
+h1 {
+  font-size: var(--font-large);
+  font-weight: var(--weight-bold);
+  margin: 16px 0px;
+}
+
+h2 {
+  font-size: var(--font-semi-large);
+  font-weight: var(--weight-semi-bold);
+  margin: 8px 0px;
+}
+
+h3 {
+  font-size: var(--font-medium);
+  font-weight: var(--weight-regular);
+  margin: 8px 0px;
+}
+
+p {
+  font-size: var(--font-regular);
+  font-weight: var(--weight-regular);
+  margin: 4px 0px;
+}
+
 /* Universal tags */
 
 * {
@@ -77,7 +103,7 @@ input {
 }
 
 .active {
-  display: block;
+  display: flex;
   animation: var(--animation-fadeIn);
 }
 
@@ -103,4 +129,38 @@ input {
   height: 100%;
   z-index: -1;
   animation: var(--animation-fadeIn);
+}
+
+/* Real time clock */
+.title {
+  font-size: 120px;
+}
+
+/* Greeting */
+.greetSection {
+  width: 50%;
+  position: relative;
+}
+
+.greetAlert {
+  position: absolute;
+  margin: 16px 0;
+}
+
+/* To-do section */
+
+/* Reset */
+.reset {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  font-size: var(--font-regular);
+}
+
+/* Weather */
+.weather {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  font-size: var(--font-regular);
 }

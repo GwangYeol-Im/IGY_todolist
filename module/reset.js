@@ -12,15 +12,16 @@ export function paintReset() {
   Util.fadeIn(reset, text);
 }
 
+//Reset button event listener.
 reset.addEventListener("click", entireReset);
 
 export function entireReset() {
   localStorage.removeItem("currentUser");
   localStorage.removeItem("toDos");
-  Util.hide(Greeting.greeting, Todo.toDoForm, Todo.fullToDo, Weather.weather);
+  Util.hide(Todo.toDoForm, Todo.fullToDo, Weather.weather);
   Todo.clearToDos();
   Todo.clearToDoList();
-  reset.innerText = "";
+  Util.clearText(Greeting.greeting, reset);
 
   Greeting.loadName();
   Todo.loadToDos();

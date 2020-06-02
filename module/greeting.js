@@ -40,7 +40,8 @@ export function handleSubmit(event) {
   if (currentValue.length === 0) {
     paintAlert();
   } else {
-    Util.hide(greetAlert, nameForm);
+    Util.hide(nameForm);
+    Util.clearText(greetAlert);
     saveName(currentValue);
     paintGreeting(currentValue);
     Todo.paintToDoForm();

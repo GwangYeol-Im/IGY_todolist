@@ -2,7 +2,7 @@
 
 // Display element on browser.
 export function display(...args) {
-  args.forEach(element => {
+  args.forEach((element) => {
     element.classList.remove("none");
     element.classList.add("active");
   });
@@ -10,7 +10,7 @@ export function display(...args) {
 
 // Hide element on browser.
 export function hide(...args) {
-  args.forEach(element => {
+  args.forEach((element) => {
     element.classList.remove("active");
     element.classList.add("none");
   });
@@ -20,6 +20,11 @@ export function hide(...args) {
 export function change(del, cre) {
   hide(del);
   display(cre);
+}
+
+// Clear text in element.
+export function clearText(...arg) {
+  arg.forEach((element) => (element.innerText = ""));
 }
 
 //Fade-in motion function
