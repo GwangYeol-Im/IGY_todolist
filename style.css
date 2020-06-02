@@ -5,11 +5,11 @@
   --color-background: #2c3e50;
 
   /* Font size */
-  --font-large: 48px;
-  --font-semi-large: 36px;
-  --font-medium: 30px;
-  --font-regular: 25px;
-  --font-small: 20px;
+  --font-large: 7.5vw;
+  --font-semi-large: 4.5vw;
+  --font-medium: 3vw;
+  --font-regular: 2.3vw;
+  --font-small: 1.7vw;
 
   /* Font weight */
   --weight-bold: 700;
@@ -73,19 +73,22 @@ button {
   color: var(--color-white);
   cursor: pointer;
   border: none;
+  border-radius: 4px;
   outline: none;
   background-color: transparent;
   font-family: "Raleway", sans-serif;
 }
 
 input {
+  width: 25vw;
   cursor: text;
   padding: 0;
+  margin: 16px 0;
   outline: 0;
   border: none;
   border-bottom: 3px solid var(--color-white);
   text-align: center;
-  font-size: var(--font-semi-large);
+  font-size: var(--font-regular);
   color: var(--color-white);
   caret-color: var(--color-white);
   background-color: transparent;
@@ -132,17 +135,19 @@ input {
 }
 
 /* Real time clock */
+
 .title {
-  top: 20%;
-  left: 50%;
-  transform: translate(-50%);
-  position: absolute;
   padding-left: 12px;
-  font-size: 120px;
+  font-size: var(--font-large);
   letter-spacing: 5px;
 }
 
 /* Greeting */
+
+.question {
+  line-height: 105px;
+  margin: 0;
+}
 
 .greetAlert {
   height: 30px;
@@ -150,13 +155,17 @@ input {
 
 .greetings {
   letter-spacing: 3px;
-  font-size: 70px;
+  font-size: var(--font-semi-large);
 }
 
 /* To-do section */
 .toDoSection {
   width: 40%;
   position: relative;
+}
+
+.toDoForm > p {
+  font-size: var(--font-small);
 }
 
 .toDoList {
@@ -175,13 +184,18 @@ input {
 .toDo > button {
   flex-basis: 35%;
   text-align: right;
-  font-size: var(--font-regular);
+  font-size: var(--font-small);
 }
 
 .toDo > span {
+  padding-left: 10px;
   flex-basis: 65%;
-  font-size: var(--font-medium);
+  font-size: var(--font-regular);
   line-height: 35px;
+}
+
+.toDoComment {
+  height: 121px;
 }
 
 /* Reset */
@@ -189,7 +203,7 @@ input {
   position: absolute;
   bottom: 30px;
   left: 30px;
-  font-size: var(--font-regular);
+  font-size: var(--font-small);
 }
 
 /* Weather */
@@ -197,5 +211,95 @@ input {
   position: absolute;
   bottom: 30px;
   right: 30px;
-  font-size: var(--font-regular);
+  font-size: var(--font-small);
+}
+
+/* Responsive */
+@media only screen and (max-width: 1024px) {
+  .title {
+    margin: 0;
+  }
+
+  .question {
+    line-height: 60px;
+  }
+
+  .toDoForm > input {
+    margin: 0;
+  }
+
+  .toDoForm > p {
+    margin: 22px;
+  }
+
+  .toDoList,
+  .toDo {
+    margin: 0;
+  }
+
+  .toDoComment {
+    height: 94px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  :root {
+    --font-large: 10vw;
+    --font-semi-large: 6vw;
+    --font-medium: 5vw;
+    --font-regular: 3.5vw;
+    --font-small: 3vw;
+  }
+
+  input {
+    width: 35vw;
+  }
+
+  .toDoForm > p {
+    margin: 20px;
+  }
+
+  .toDoComment {
+    height: 101px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  :root {
+    --font-regular: 5vw;
+    --font-small: 4vw;
+  }
+
+  #main {
+    justify-content: flex-start;
+    padding-top: 100px;
+  }
+
+  .toDoForm > input {
+    margin-top: 15px;
+  }
+
+  .toDoForm > p {
+    margin-top: 5px;
+  }
+
+  .toDoComment {
+    height: 81px;
+  }
+
+  .toDoComment > p {
+    font-size: var(--font-small);
+    text-align: center;
+    width: 200px;
+  }
+
+  .toDo > button,
+  .toDo > span {
+    line-height: 25px;
+  }
+
+  .reset,
+  .weather {
+    bottom: 93%;
+  }
 }
