@@ -22,6 +22,7 @@ export function loadName() {
     paintGreeting(currentUser);
     Todo.paintToDoForm();
     Util.display(Todo.toDoForm, Weather.weather);
+    Util.hide(greetAlert);
     Reset.paintReset();
   }
 }
@@ -40,7 +41,7 @@ export function handleSubmit(event) {
   if (currentValue.length === 0) {
     paintAlert();
   } else {
-    Util.hide(nameForm);
+    Util.hide(nameForm, greetAlert);
     Util.clearText(greetAlert);
     saveName(currentValue);
     paintGreeting(currentValue);
@@ -53,6 +54,7 @@ export function handleSubmit(event) {
 
 // Paint alert if value has no character.
 export function paintAlert() {
+  Util.display(greetAlert);
   const text = "Name need to be at least 1 characters long.";
   Util.fadeIn(greetAlert, text);
 }
@@ -70,13 +72,13 @@ export function paintGreeting(text) {
   let welcome = "";
 
   if (hour < 6) {
-    welcome = `Good night, ${text}`;
+    welcome = `Good night, ${text}.`;
   } else if (hour < 12) {
-    welcome = `Good morning, ${text}`;
+    welcome = `Good morning, ${text}.`;
   } else if (hour < 18) {
-    welcome = `Good afternoon, ${text}`;
+    welcome = `Good afternoon, ${text}.`;
   } else {
-    welcome = `Good evening, ${text}`;
+    welcome = `Good evening, ${text}.`;
   }
 
   Util.fadeIn(greeting, welcome);

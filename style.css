@@ -133,21 +133,56 @@ input {
 
 /* Real time clock */
 .title {
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%);
+  position: absolute;
+  padding-left: 12px;
   font-size: 120px;
+  letter-spacing: 5px;
 }
 
 /* Greeting */
-.greetSection {
-  width: 50%;
-  position: relative;
-}
 
 .greetAlert {
-  position: absolute;
-  margin: 16px 0;
+  height: 30px;
+}
+
+.greetings {
+  letter-spacing: 3px;
+  font-size: 70px;
 }
 
 /* To-do section */
+.toDoSection {
+  width: 40%;
+  position: relative;
+}
+
+.toDoList {
+  padding-left: 0;
+  width: 100%;
+  position: absolute;
+}
+
+.toDo {
+  margin: 4px 0;
+  display: flex;
+  justify-content: space-between;
+  top: 0;
+}
+
+.toDo > button {
+  flex-basis: 35%;
+  text-align: right;
+  font-size: var(--font-regular);
+}
+
+.toDo > span {
+  flex-basis: 65%;
+  font-size: var(--font-medium);
+  line-height: 35px;
+}
 
 /* Reset */
 .reset {

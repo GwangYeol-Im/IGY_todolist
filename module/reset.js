@@ -23,6 +23,7 @@ export function entireReset() {
   Todo.clearToDoList();
   Util.clearText(Greeting.greeting, reset);
 
+  Util.display(Greeting.greetAlert);
   Greeting.loadName();
   Todo.loadToDos();
   Todo.toDoForm.addEventListener("submit", Todo.handleSubmit);
