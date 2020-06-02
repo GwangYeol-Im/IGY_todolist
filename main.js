@@ -4,7 +4,7 @@ import * as Greeting from "./module/greeting.js";
 import * as Todo from "./module/todo.js";
 import * as Weather from "./module/weather.js";
 
-function init() {
+export function init() {
   //Background image.
   const randomNum = Bg.getRandom();
   Bg.paintBg(randomNum);

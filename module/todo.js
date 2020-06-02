@@ -4,16 +4,30 @@ export const todoSection = document.querySelector(".js-toDoSection"),
   toDoForm = todoSection.querySelector(".js-toDoForm"),
   toDoInput = toDoForm.querySelector("input"),
   fullToDo = todoSection.querySelector(".js-toDoComment"),
-  todoList = todoSection.querySelector(".js-toDoList");
+  toDoList = todoSection.querySelector(".js-toDoList");
 
 export const TODOS_LS = "toDos",
   TODOS_NUM = 6;
 
 export let toDos = [];
 
+//Clear toDos.
+export function clearToDos() {
+  toDos.splice(0);
+}
+
+//Clear toDoList.
+export function clearToDoList() {
+  const toDo = toDoList.querySelectorAll("li");
+  toDo.forEach((element) => toDoList.removeChild(element));
+}
+
 // Rendering logic.
 // load To-Do form on browser.
 export function paintToDoForm() {
+  if (toDoForm.querySelector("p") !== null) {
+    return;
+  }
   const p = document.createElement("p");
   p.innerText = "Note your plan.";
   toDoForm.appendChild(p);
@@ -25,7 +39,7 @@ export function loadToDos() {
 
   if (loadedToDos !== null) {
     const toDoArr = JSON.parse(loadedToDos);
-    toDoArr.forEach(toDo => paintToDo(toDo.text));
+    toDoArr.forEach((toDo) => paintToDo(toDo.text));
   }
 
   if (toDos.length === TODOS_NUM) {
@@ -51,6 +65,7 @@ export function handleSubmit() {
 
 //Paint to-do if value has characters.
 export function paintToDo(text) {
+  console.log("a");
   const li = document.createElement("li"),
     delBtn = document.createElement("button"),
     span = document.createElement("span"),
@@ -70,7 +85,7 @@ export function paintToDo(text) {
   li.appendChild(delBtn);
   li.appendChild(span);
   li.id = id;
-  todoList.appendChild(li);
+  toDoList.appendChild(li);
   saveToDo();
 }
 
@@ -82,7 +97,7 @@ export function saveToDo() {
 // Handle del Button.
 export function handleBtn(event) {
   const target = event.target.parentNode,
-    cleanToDos = toDos.filter(toDo => toDo.id !== parseInt(target.id));
+    cleanToDos = toDos.filter((toDo) => toDo.id !== parseInt(target.id));
 
   Util.fadeOut(target);
   toDos = cleanToDos;

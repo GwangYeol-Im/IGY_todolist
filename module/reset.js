@@ -17,16 +17,15 @@ reset.addEventListener("click", entireReset);
 export function entireReset() {
   localStorage.removeItem("currentUser");
   localStorage.removeItem("toDos");
+  Util.hide(Greeting.greeting, Todo.toDoForm, Todo.fullToDo, Weather.weather);
+  Todo.clearToDos();
+  Todo.clearToDoList();
+  reset.innerText = "";
 
-  Util.hide(
-    Greeting.greeting,
-    Todo.toDoForm,
-    Todo.todoList,
-    Todo.fullToDo,
-    Weather.weather,
-    reset
-  );
-  Greeting.askForName();
+  Greeting.loadName();
+  Todo.loadToDos();
+  Todo.toDoForm.addEventListener("submit", Todo.handleSubmit);
+  Weather.loadCoords();
 }
 
 export * from "./reset.js";
