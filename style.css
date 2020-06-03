@@ -19,6 +19,9 @@
 
   /* Animation */
   --animation-fadeIn: fadeIn 0.5s linear;
+
+  /* Text shadow */
+  --text-shadow: 1px 1px 1px #000000;
 }
 
 /* Typography */
@@ -140,6 +143,7 @@ input {
   padding-left: 12px;
   font-size: var(--font-large);
   letter-spacing: 5px;
+  text-shadow: var(--text-shadow);
 }
 
 /* Greeting */
@@ -147,15 +151,18 @@ input {
 .question {
   line-height: 112px;
   margin: 0;
+  text-shadow: var(--text-shadow);
 }
 
 .greetAlert {
   height: 30px;
+  text-shadow: var(--text-shadow);
 }
 
 .greetings {
   letter-spacing: 3px;
   font-size: var(--font-semi-large);
+  text-shadow: var(--text-shadow);
 }
 
 /* To-do section */
@@ -166,6 +173,7 @@ input {
 
 .toDoForm > p {
   font-size: var(--font-small);
+  text-shadow: var(--text-shadow);
 }
 
 .toDoList {
@@ -199,12 +207,17 @@ input {
   height: 101px;
 }
 
+.toDoComment > p {
+  text-shadow: var(--text-shadow);
+}
+
 /* Reset */
 .reset {
   position: absolute;
   bottom: 30px;
   left: 30px;
   font-size: var(--font-small);
+  text-shadow: var(--text-shadow);
 }
 
 /* Weather */
@@ -213,6 +226,7 @@ input {
   bottom: 30px;
   right: 30px;
   font-size: var(--font-small);
+  text-shadow: var(--text-shadow);
 }
 
 /* Responsive */
@@ -289,6 +303,10 @@ input {
     height: 40px;
   }
 
+  .greetAlert {
+    font-size: var(--font-small);
+  }
+
   .toDoForm > input {
     margin-top: 15px;
   }
@@ -318,6 +336,7 @@ input {
   }
 
   .toDo > span {
+    font-size: var(--font-small);
     flex-basis: 90%;
   }
 
