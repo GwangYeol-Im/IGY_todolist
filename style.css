@@ -5,11 +5,11 @@
   --color-background: #2c3e50;
 
   /* Font size */
-  --font-large: 7.5vw;
-  --font-semi-large: 4.5vw;
-  --font-medium: 3vw;
-  --font-regular: 2.3vw;
-  --font-small: 1.7vw;
+  --font-large: 120px;
+  --font-semi-large: 80px;
+  --font-medium: 60px;
+  --font-regular: 30px;
+  --font-small: 20px;
 
   /* Font weight */
   --weight-bold: 700;
@@ -145,7 +145,7 @@ input {
 /* Greeting */
 
 .question {
-  line-height: 105px;
+  line-height: 112px;
   margin: 0;
 }
 
@@ -170,6 +170,7 @@ input {
 
 .toDoList {
   padding-left: 0;
+  margin: 0;
   width: 100%;
   position: absolute;
 }
@@ -195,7 +196,7 @@ input {
 }
 
 .toDoComment {
-  height: 121px;
+  height: 101px;
 }
 
 /* Reset */
@@ -216,12 +217,19 @@ input {
 
 /* Responsive */
 @media only screen and (max-width: 1024px) {
+  :root {
+    --font-large: 100px;
+    --font-semi-large: 50px;
+    --font-medium: 40px;
+    --font-regular: 25px;
+    --font-small: 20px;
+  }
   .title {
     margin: 0;
   }
 
   .question {
-    line-height: 60px;
+    line-height: 76px;
   }
 
   .toDoForm > input {
@@ -238,21 +246,21 @@ input {
   }
 
   .toDoComment {
-    height: 94px;
+    height: 100px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   :root {
-    --font-large: 10vw;
-    --font-semi-large: 6vw;
     --font-medium: 5vw;
-    --font-regular: 3.5vw;
-    --font-small: 3vw;
   }
 
   input {
     width: 35vw;
+  }
+
+  .question {
+    height: 74px;
   }
 
   .toDoForm > p {
@@ -260,19 +268,25 @@ input {
   }
 
   .toDoComment {
-    height: 101px;
+    height: 94px;
   }
 }
 
 @media only screen and (max-width: 480px) {
   :root {
-    --font-regular: 5vw;
-    --font-small: 4vw;
+    --font-large: 80px;
+    --font-semi-large: 20px;
+    --font-regular: 20px;
+    --font-small: 15px;
   }
 
   #main {
-    justify-content: flex-start;
     padding-top: 100px;
+    justify-content: flex-start;
+  }
+
+  .question {
+    height: 40px;
   }
 
   .toDoForm > input {
@@ -280,17 +294,31 @@ input {
   }
 
   .toDoForm > p {
+    width: 150px;
+    text-align: center;
     margin-top: 5px;
   }
 
   .toDoComment {
-    height: 81px;
+    height: 84px;
   }
 
   .toDoComment > p {
     font-size: var(--font-small);
     text-align: center;
     width: 200px;
+  }
+
+  .toDo {
+    width: 200px;
+  }
+
+  .toDo > button {
+    flex-basis: 10%;
+  }
+
+  .toDo > span {
+    flex-basis: 90%;
   }
 
   .toDo > button,
