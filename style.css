@@ -125,6 +125,8 @@ input {
 /* Main section */
 #main {
   height: 100vh;
+  justify-content: flex-start;
+  padding-top: 10%;
 }
 
 .background {
@@ -265,10 +267,6 @@ input {
 }
 
 @media only screen and (max-width: 768px) {
-  :root {
-    --font-medium: 5vw;
-  }
-
   input {
     width: 35vw;
   }
@@ -282,21 +280,21 @@ input {
   }
 
   .toDoComment {
-    height: 94px;
+    height: 96px;
   }
 }
 
 @media only screen and (max-width: 480px) {
   :root {
     --font-large: 80px;
-    --font-semi-large: 20px;
+    --font-semi-large: 30px;
+    --font-medium: 25px;
     --font-regular: 20px;
     --font-small: 15px;
   }
 
   #main {
     padding-top: 100px;
-    justify-content: flex-start;
   }
 
   .question {
